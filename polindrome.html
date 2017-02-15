@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>polindrome</title>
+</head>
+<body>
+
+
+<form> 
+	<input type="text" name="" class="form-control" id="str"> 
+	<input type="button" value="out put" class="btn btn-info" onclick="StrPol()" >
+</form>
+<p id="strShow"></p>
+
+
+<script> 
+         //polindrome
+         function StrPol(){
+          var revStr="";
+          var str=document.getElementById("str").value; 
+          var i=str.length;
+          
+          for(var j=i; j>=0; j--){
+            revStr=revStr+str.charAt(j); 
+          } 
+
+          if(str == ""){
+           document.getElementById("strShow").innerHTML="Plz enter some text or nmbr";
+          } 
+          else if(str == revStr){
+           document.getElementById("strShow").innerHTML="polindrome";
+          }
+          else{
+           document.getElementById("strShow").innerHTML="not polindrome";
+          } 
+
+         }
+
+</script>
+</body>
+</html>
