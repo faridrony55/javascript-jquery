@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<style>
+*{
+	box-sizing: border-box;
+}
+	.calculator{
+		width: 500px;
+		margin:4em auto;
+		border:4px solid #006699;
+		overflow: hidden;
+	}
+	form input[name="display"]{
+		display: block;
+    width: 100%; 
+    padding: 15px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #fff;
+    background-color: #069;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 0;
+	}
+	form input[type="button"]{
+    float: left;
+    width: 25%;
+    padding: 10px 10px;
+    font-size: 20px;
+    line-height: 1.42857143;
+    color: #fff;
+    background-color: #069;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    cursor: pointer;
+    font-weight: 700;
+	}
+
+	form input[type="button"]:hover,
+	form input[type="button"]:focus{
+
+   background-color: #044a6d;
+	}
+	#form input[type="text"],
+	#form input[type="password"]{
+		display: block;
+    width: 100%;
+    padding: 10px 10px;
+    font-size: 20px;
+    line-height: 1.42857143;
+    color: #fff;
+    background-color: #069;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    cursor: pointer;
+    font-weight: 700;
+	}
+	#form button,#form [type="submit"]{
+		padding: 10px 30px;
+    background-color: #069;
+    color: #fff
+	}
+</style>
+<hr>
+  <div class="calculator">
+	<form name="calculator">
+		<input type="text" name="display" readonly> 
+
+		<input type="button" value="c" name="clear" onclick="addclear()">
+		<input type="button" value="&radic;" name="square" onclick="addsquare()">
+		<input type="button" value="%" name="percentage" onclick="addpercentage()">
+		<input type="button" value="&larr;" name="back" onclick="addback()">
+
+		<input type="button" value="7" name="seven" onclick="addseven()">
+		<input type="button" value="8" name="eight" onclick="addeight()">
+		<input type="button" value="9" name="nine" onclick="addnine()">
+		<input type="button" value="/" name="divide" onclick="adddevide()">
+
+		<input type="button" value="4" name="four" onclick="addfour()">
+		<input type="button" value="5" name="five" onclick="addfive()">
+		<input type="button" value="6" name="six" onclick="addsix()">
+		<input type="button" value="*" name="multiplication" onclick="addmulty()">
+
+		<input type="button" value="3" name="four" onclick="addfour()">
+		<input type="button" value="2" name="five" onclick="addfive()">
+		<input type="button" value="1" name="six" onclick="addsix()">
+		<input type="button" value="-" name="minus" onclick="addminus()">
+
+		<input type="button" value="." name="decimal" onclick="adddecimal()">
+		<input type="button" value="0" name="zero" onclick="addzero()">
+		<input type="button" value="=" name="result" onclick="addresult()">
+		<input type="button" value="+" name="plus" onclick="addplus()">
+
+
+	</form>
+</div> 
+ 
+</body>
+</html>
+ 
+
+<script type="text/javascript">
+ 	function addzero(){
+		document.calculator.display.value +=0; 
+	}
+	function addone(){
+		document.calculator.display.value +=1; 
+	}
+	function addtwo(){
+		document.calculator.display.value +=2; 
+	}
+	function addthree(){
+		document.calculator.display.value +=3; 
+	}
+	function addfour(){
+		document.calculator.display.value +=4; 
+	}
+	function addfive(){
+		document.calculator.display.value +=5; 
+	}
+	function addsix(){
+		document.calculator.display.value +=6; 
+	}
+	function addseven(){
+		document.calculator.display.value +=7; 
+	}
+	function addeight(){
+		document.calculator.display.value +=8; 
+	}
+	function addnine(){
+		document.calculator.display.value +=9; 
+	} 
+	function addplus(){
+		document.calculator.display.value +="+"; 
+	}
+	function addminus(){
+		document.calculator.display.value +="-"; 
+	}
+	function addmulty(){
+		document.calculator.display.value +="*"; 
+	}
+	function adddevide(){
+		document.calculator.display.value +="/"; 
+	}
+	function addpercentage(){
+		document.calculator.display.value +="%"; 
+	}
+	function adddecimal(){
+		document.calculator.display.value +="."; 
+	}
+	function addclear(){
+		document.calculator.display.value =""; 
+	} 
+
+
+	function addback(){
+		document.calculator.display.value = document.calculator.display.value.slice(0,-1); 
+	}
+	function addsquare(){
+		document.calculator.display.value = Math.sqrt(document.calculator.display.value); 
+	}
+	function addresult(){
+		var result=eval(document.calculator.display.value);
+		document.calculator.display.value =result; 
+	}
+	 
+</script>
