@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<!-- Result -->
+ 
+<input type="text" name="" placeholder="input number" id="Nmbr">
+<button type="button" onclick="btnClick();">Click</button>
+<h2 id="shw"></h2>
+
+<script>
+	function btnClick(){
+		var nbr=document.getElementById("Nmbr").value;
+		var Shw=document.getElementById("shw");
+		var i=0;
+		if (nbr != "") { 
+		 	
+		 	if (nbr<=100) {
+		 		Shw.innerHTML="A+";
+		 		if (nbr <= 79) {
+		 			Shw.innerHTML="A";
+
+		 			if (nbr <= 69) {
+		 			Shw.innerHTML="A-";
+		 				
+		 				if (nbr <= 59) {
+		 				Shw.innerHTML="B";
+
+		 					if(nbr <= 49){
+		 						Shw.innerHTML="C";
+
+		 						if (nbr <= 39) {
+		 							Shw.innerHTML="D";
+
+		 							if (nbr <= 33) {
+		 								Shw.innerHTML="F";
+		 							}
+		 						}
+		 					}
+		 				}
+
+		 			}
+
+		 		}
+		 	}
+		 	else {
+		 		Shw.innerHTML="enter maximum 100";
+		 	}
+
+		} else {
+			Shw.innerHTML="enter a nmbr";
+		}
+	}
+</script>
+ 
+
+
+ 
+
+</body>
+</html>
