@@ -10,8 +10,21 @@
 <input type="text" name="" placeholder="input number" id="Nmbr">
 <button type="button" onclick="btnClick();">Click</button>
 <h2 id="shw"></h2>
+<br>
+<br>
+ 
+
+
+<!-- even odd -->
+ 
+<input type="text" name="" placeholder="input number" id="oddEven"> 
+<button type="button" onclick="OddEvn();">Click</button>
+<h2 id="oddEvenlist"></h2>
+	
 
 <script>
+
+ //search even or odd
 	function btnClick(){
 		var nbr=document.getElementById("Nmbr").value;
 		var Shw=document.getElementById("shw");
@@ -28,19 +41,9 @@
 				}
 			}
 		}
-	}
-</script>
- 
+	};
 
-
-<!-- ODD LIST-->
- 
-<input type="text" name="" placeholder="input number" id="oddEven"> 
-<button type="button" onclick="OddEvn();">Click</button>
-<h2 id="oddEvenlist"></h2>
-	
-
-<script>
+//oddEvenlist
 	function OddEvn(){
 		var nbr=document.getElementById("oddEven").value; 
 		var Shw=document.getElementById("oddEvenlist");
@@ -57,9 +60,7 @@
 				Shw.innerHTML=x; 
 			}
 		}
-	}
-
+	};
 </script>
-
 </body>
 </html>
