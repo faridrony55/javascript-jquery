@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<!-- Is prime or not -->
+ 
+<input type="text" name="" placeholder="input number" id="PrmNmbr"> 
+<button type="button" onclick="PrmNmbr();">Click</button>
+<h2 id="PrmNmbrshow"></h2>
+
+ 
+<script>
+ 
+	function PrmNmbr(){
+		var x = document.getElementById("PrmNmbrshow");
+		var a=document.getElementById("PrmNmbr").value;
+ 
+		var c=0;  
+  
+for(var i=2; i<a; i++)  {  
+   if(a%i == 0)  
+   	{  
+    	c=i;     
+   	}  
+  } 
+
+  if(c==0)  
+  {  
+  	x.innerHTML="is prime";  
+  }  
+  else  
+  {  
+   x.innerHTML="is not a prime";  
+  }  
+}
+ 
+</script>
+
+</body>
+</html>
