@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title> 
+</head>
+<body>
+
+
+<input type="text" name="" placeholder="input number" id="fctrlNmbr"> 
+<button type="button" onclick="fctrlNmbr();">Click</button>
+<h2 id="PrmNmbrshow"></h2>
+
+
+<script type="text/javascript">
+
+	function fctrlNmbr(){
+		var Show = document.getElementById("PrmNmbrshow");
+		var input=document.getElementById("fctrlNmbr").value;
+ 
+    var result = input;
+    for(var i=1;i < input;i++){
+       result =  input * i;
+    }
+    Show.innerHTML=result;
+
+}
+   </script>
+</body>
+</html>
