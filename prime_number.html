@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<!-- prime nmbrs -->
+ 
+<input type="text" name="" placeholder="input number" id="PrmNmbr"> 
+<button type="button" onclick="PrmNmbr();">Click</button>
+<h2 id="PrmNmbrshow"></h2>
+
+<script>
+ 
+	function PrmNmbr(){
+		var Prmhow = document.getElementById("PrmNmbrshow");
+		var x=document.getElementById("PrmNmbr").value;
+	 
+		for(var i=1; i<=x ;i++){
+
+        var isPrime = true;
+
+        for(var j=2; j<i; j++){
+            if(i%j == 0){
+                isPrime = false;
+            }
+        }
+        if(isPrime == true){ 
+            Prmhow.innerHTML=i+"<br>";
+        }
+    }
+	}	
+ 
+</script>
+  
+
+</body>
+</html>
