@@ -1,1 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
 
+<!-- even odd -->
+ 
+<input type="text" name="" placeholder="input number" id="Nmbr">
+<button type="button" onclick="btnClick();">Click</button>
+<h2 id="shw"></h2>
+
+<script>
+	function btnClick(){
+		var nbr=document.getElementById("Nmbr").value;
+		var Shw=document.getElementById("shw");
+		var i=0;
+		 
+		if(nbr==""){
+			Shw.innerHTML="Plz inter any nmbr";
+		} else {
+			for (i ; i<=nbr; i++) { 
+				if (i%2==0) {
+				Shw.innerHTML=i + " even";
+				} else {
+					Shw.innerHTML=i + " odd";
+				}
+			}
+		}
+	}
+</script>
+ 
+
+
+<!-- ODD LIST-->
+ 
+<input type="text" name="" placeholder="input number" id="oddEven"> 
+<button type="button" onclick="OddEvn();">Click</button>
+<h2 id="oddEvenlist"></h2>
+	
+
+<script>
+	function OddEvn(){
+		var nbr=document.getElementById("oddEven").value; 
+		var Shw=document.getElementById("oddEvenlist");
+		var i=0,x="";
+		 
+		if(nbr==""){
+			Shw.innerHTML="Plz inter any nmbr";
+		} else {
+			for (i ; i<=nbr; i++) { 
+				if ((i%2)==0) {
+					continue;
+				} 
+				x=x+i + " <br>";
+				Shw.innerHTML=x; 
+			}
+		}
+	}
+
+</script>
+
+</body>
+</html>
