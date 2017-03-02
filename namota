@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+ 
+ 
+
+<!-- namota -->
+ 
+ <h1 id="namota"></h1> 
+	
+
+<script>
+
+
+	var x=5, i=1, y="";
+
+	do {
+		y +=  x + " * "+ i + " = "+ x*i + "<br>"; 
+		document.getElementById("namota").innerHTML=y + "<hr>";
+
+		i++
+	}
+	while(10>=i) 
+
+ 	
+		 
+ 
+</script>
+</body>
+</html>
