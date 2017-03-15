@@ -1,0 +1,107 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+   
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+    <style type="text/css">
+      /* End Quiz Code */
+.ans{
+  display: none
+}
+    </style>
+
+<title>What Type of Date Are You? (Dude Edition)</title>
+</head>
+<body>
+
+
+<div class="container">
+ 
+ 
+<p class="question">1. What is the answer to this question?</p>        
+
+<ul class="answers">            
+<input type="radio" name="q1" value="answer1" id="q1a"><label for="q1a">Answer 1</label><br>          
+<input type="radio" name="q1" value="answer2" id="q1b"><label for="q1b">Answer 2</label>        
+</ul>        
+
+
+<p class="question">2. What is the answer to this question?</p>        
+
+<ul class="answers">            
+<input type="radio" name="q2" value="a" id="q2a"><label for="q2a">Answer 1</label><br>           
+<input type="radio" name="q2" value="b" id="q2b"><label for="q2b">Answer 2</label>       
+</ul>  
+
+<p>3. Choice more then one</p>  
+<div class="checkbox">
+  <label>
+    <input type="checkbox" name="q3" value="option1">
+    Option one
+  </label>
+</div> 
+<div class="checkbox">
+  <label>
+    <input type="checkbox" name="q3" value="option2">
+    Option two
+  </label>
+</div>  
+<div class="checkbox">
+  <label>
+    <input type="checkbox" name="q3" value="option3">
+    Option Three
+  </label>
+</div>    
+
+<br>
+<div id="results" class="btn btn-info">            
+Show me the answers!        
+</div>
+
+<br>       
+
+<strong></strong>
+<ul class="ans">            
+    <li>1. <b>Answer 1</b></li>   
+    <li>2. <b>Answer 2</b></li>  
+    <li>3. <b>Option two , Option one</b> </li>       
+</ul>        
+        
+<br>
+ <span></span>
+
+</div>
+
+<script src="http://www.hungrypiranha.org/downloads/jquery.js"></script> 
+<script type="text/javascript">
+ 
+ $(function() 
+{    
+  $("#results").click(function() {                
+
+if (!$("input[@name=q1]:checked").val() || !$("input[@name=q2]:checked").val()) 
+  {            
+    $("span").text("You're not done yet!");         
+  }  
+  else {
+    var q1 = $("input[name=q1]:checked").val();
+    var q2 = $("input[name=q2]:checked").val(); 
+    var q3 = $("input[name=q3]:checked").val(); 
+
+    var q3 = [];
+            $.each($("input[name=q3]:checked"), function(){            
+                q3.push($(this).val());
+            });
+
+    var ans = "Your Ans Are : <br> 1. " + q1 +"<br> 2. " + q2 +"<br> 3. "+q3;
+    $("strong").html(ans); 
+    $(".ans").show(2000);
+    $("span").text("");  
+  }      
+
+
+    });});
+
+     
+  </script>
+    </body>
+    </html>
