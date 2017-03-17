@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet"> 
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+
+
+<div class="container">
+	<div class="row">
+		 	
+		 <div class="col-sm-4">
+		 	 
+		 	 <form>
+		 	 	<div class="form-group">
+		 	 		<p>country</p>
+		 	 		<h2>city</h2>
+		 	 		<h1>temparature</h1>
+		 	 	</div>
+		 	 	 <input type="text" name="">
+		 	 	<div class="form-group">
+		 	 		<button type="button"  value="Login" class="btn btn-danger btn-lg">submit</button>
+		 	 	</div>
+		 	 
+		 	 	<div class="form-group">
+		 	 		<button class="btn">
+		 	 			<a class="twitter-share-button"
+  href="https://twitter.com/intent/tweet?text=Hello%20world">
+Tweet</a>
+		 	 		</button>
+		 	 	</div>
+		 	 	</form>
+
+		 </div>
+  
+
+	</div>
+</div>
+ 
+
+<script src="jquery.min.js"></script>
+<script>
+ 	
+ 		$(document).ready(function(){
+
+ 			$(".btn").click(function(){ 
+ 				 var city_name=$("input").val(); 
+ 				getValue(city_name);
+ 			});
+
+ 			function getValue(city_name){
+ 				$.ajax({
+ 					url:"http://api.apixu.com/v1/current.json?key=fadd9cf22d134836b84192315171603&q="+city_name,
+ 					dataType:'json',
+ 					success:function(data){ 
+
+ 							$("p").text(data.location.country);
+ 							$("h2").text(data.location.name);
+ 							$("h1").text(data.current.temp_c);
+ 					},
+ 					error: function(){
+
+ 					}
+ 				})
+ 			}
+ 			 
+
+ 		})
+ 		 
+	
+</script>
+
+</body>
+</html>
