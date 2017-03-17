@@ -4,77 +4,110 @@
 	<title></title>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet"> 
-    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+	<style type="text/css">
+		
+body {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 26px;
+    letter-spacing: 1px;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+.bg{
 
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    /*background: url('https://source.unsplash.com/random');
+    background-repeat: no-repeat;
+    background-size: cover;*/
+    position: relative;
+    height: 100vh
+}
+.bg img{
+    width: 100%;
+    height: 100vh
+}
+
+.bg:before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;  
+    background-color: rgba(33, 32, 32, 0.91);
+}
+
+.weather-box{
+    color: #fff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); 
+    text-align: center;
+    width: 400px;
+    padding: 50px 0;
+
+}
+	</style>
 </head>
 <body>
 
-
-<div class="container">
-	<div class="row">
-		 	
-		 <div class="col-sm-4">
-		 	 
-		 	 <form>
-		 	 	<div class="form-group">
-		 	 		<p>country</p>
-		 	 		<h2>city</h2>
-		 	 		<h1>temparature</h1>
-		 	 	</div>
-		 	 	 <input type="text" name="">
-		 	 	<div class="form-group">
-		 	 		<button type="button"  value="Login" class="btn btn-danger btn-lg">submit</button>
-		 	 	</div>
-		 	 
-		 	 	<div class="form-group">
-		 	 		<button class="btn">
-		 	 			<a class="twitter-share-button"
-  href="https://twitter.com/intent/tweet?text=Hello%20world">
-Tweet</a>
-		 	 		</button>
-		 	 	</div>
-		 	 	</form>
-
-		 </div>
-  
-
-	</div>
+<div class="bg">
+<img src="https://source.unsplash.com/random">
+<div class="weather-box">
+	<h5 id="city">city</h5>
+	<h1 id="cntry">Country</h1>
+	<h3><span id="temp">00</span><sup>o </sup>C</h3>
+	<ul class="list-inline">
+		<li><input type="text" name="" class="form-control"></li>
+		<li><button class="btn btn-success">Click</button></li>
+	</ul>
+	<h1 class="btn btn-danger Twt">
+	<a class="twitter-share-button" > Tweet </a></h1>
 </div>
+</div> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+
+$(function(){
+
+	$("button.btn").click(function(){
+		var city_name=$("input").val();
+		getWeather(city_name);
+	});
+
+	function getWeather(city_name){
+
+		$.ajax({
+			url:"http://api.apixu.com/v1/current.json?key=fadd9cf22d134836b84192315171603&q="+city_name,
+			dataType:"json",
+			success:function(data){
+				var ct=$("#city").text(data.location.name);
+				var cn=$("#cntry").text(data.location.country);
+				var tmp=$("#temp").text(data.current.temp_c);
+
+				 $(".Twt a").attr("href","https://twitter.com/intent/tweet?text="+data.location.name+","+data.location.country+", Temp "+data.current.temp_c);
+
+			},
+			error:function(){
+				 $("#city").text("type exact city name"); 
+			}
+		})
+
+	};
+
  
 
-<script src="jquery.min.js"></script>
-<script>
- 	
- 		$(document).ready(function(){
+})
 
- 			$(".btn").click(function(){ 
- 				 var city_name=$("input").val(); 
- 				getValue(city_name);
- 			});
-
- 			function getValue(city_name){
- 				$.ajax({
- 					url:"http://api.apixu.com/v1/current.json?key=fadd9cf22d134836b84192315171603&q="+city_name,
- 					dataType:'json',
- 					success:function(data){ 
-
- 							$("p").text(data.location.country);
- 							$("h2").text(data.location.name);
- 							$("h1").text(data.current.temp_c);
- 					},
- 					error: function(){
-
- 					}
- 				})
- 			}
- 			 
-
- 		})
- 		 
-	
 </script>
 
 </body>
 </html>
+
+
+<!--
+https://dev.twitter.com/web/tweet-button
+https://www.apixu.com/my/#
+https://jsonformatter.curiousconcept.com/
+-->
