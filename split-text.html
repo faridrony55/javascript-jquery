@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet"> 
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<style type="text/css">
+		
+body {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 26px;
+    letter-spacing: 1px;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+.bg{
+
+    /*background: url('https://source.unsplash.com/random');
+    background-repeat: no-repeat;
+    background-size: cover;*/
+    position: relative;
+    height: 100vh
+}
+ .bg img{
+    width: 100%;
+    height: 100vh
+}
+ 
+.bg:before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;  
+    background-color: rgba(33, 32, 32, 0.91);
+}
+
+.weather-box{
+    color: #fff; 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); 
+    text-align: center; 
+    width: 700px;
+    padding: 30px;
+    border: 1px solid 
+
+}
+ </style>
+</head>
+<body>
+ 
+<div class="bg">
+ <img src="https://source.unsplash.com/random"> 
+<div class="weather-box">
+	   
+
+<ul class="list-inline">
+	<li><input type="text" class="form-control" name=""></li>
+	<li><button class="btn btn-danger">Search Temp</button></li>
+	<li>
+		
+	</li>
+</ul>
+<i></i>
+
+ 
+</div>
+</div> 
+ 
+
+
+ 
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ 
+<script>
+
+$(function(){
+ 
+
+ 
+	var str="Lorem Ipsum has been the";
+	var splt=str.split("");
+	var i=0;
+	
+	var id=function(){
+		var store=$("i").text();
+		$("i").text(store + splt[i])
+		
+		 i++;
+
+		if (str.length==i) {
+			clearInterval(id);
+		}
+
+	}
+	setInterval(id,100);
+
+
+
+	 
+
+
+})
+
+</script>
+
+</body>
+</html>
+
+ 
