@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ 
+</head>
+<body>
+ 
+<div class="container">
+	<div class="row">
+	  
+		<div class="col-sm-7">
+				
+<input type="text" id="website" value="farid rony" />
+<button data-copytarget="#website">copy</button>
+
+
+		</div>
+	</div>
+</div>
+ 
+	 
+	   
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script> 
+ 
+(function() {
+
+  'use strict';
+  // click events
+  document.body.addEventListener('click', copy, true);
+  // event handler
+  function copy(e) {
+    // find target element
+    var
+      t = e.target,
+      c = t.dataset.copytarget,
+      inp = (c ? document.querySelector(c) : null);
+    // is element selectable?
+    if (inp && inp.select) {
+      // select text
+      inp.select();
+      try {
+        // copy text
+        document.execCommand('copy');//cut
+        inp.blur();
+      }
+      catch (err) {
+        alert('please press Ctrl/Cmd+C to copy');
+      }
+    }
+  }
+})();
+</script>
+ 
+</body>
+</html>
+ 
