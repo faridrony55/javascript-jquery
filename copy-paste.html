@@ -5,18 +5,45 @@
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet"> 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	 
+	 <style>
+	 	p{
+	 		font-size: 20px
+	 	}
+	 </style>
 </head>
 <body>
  
 <div class="container">
 	<div class="row">
-		<div class="col-sm-6">
-			<p id="copy">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining</p>  
+	<hr><hr>
+		<div class="col-sm-5">
+			<p><b>username : </b> <span id="username">Lorem Ipsam</span></p>
+			<p><b>Email : </b> <span id="mail">farid@coderstrust.com</span></p>
+			<p><b>Textarea:</b> 
+			<span id="textarea-copy"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span></p>  
+		</div>
+		<div class="col-sm-2">
 			<div class="form-group">
-				<textarea rows="7" class="form-control" id="paste"></textarea>
+				<button class="btn btn-info btn-block" id="username-to-paste">Paste Username</button>
+			</div> 
+			<div class="form-group">
+			<button class="btn btn-info btn-block" id="mail-to-paste">Paste Email</button>
+			</div> 
+			<div class="form-group"> 
+			<button class="btn btn-info btn-block" id="textarea-to-paste">Paste TextArea </button> 
+			</div> 
+		</div>
+		<div class="col-sm-5">
+			<div class="form-group">
+				<input type="text" name="" id="username-paste" class="form-control">
 			</div>
-			<button class="btn btn-danger btn-lg" id="click-to-paste">Click Here To Paste</button> 
+			<div class="form-group">
+				<input type="email" name="" id="email-paste" class="form-control">
+			</div>
+			<div class="form-group">
+				<textarea rows="5" class="form-control" id="textarea-paste"></textarea>
+			</div>
+			<button class="btn btn-danger btn-lg" id="click-to-paste">Click for Paste All Information</button> 
 		</div>
 	</div>
 </div>
@@ -25,13 +52,25 @@
 	   
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
-$(function(){
+$(function(){ 
+
+	 	var username=$("#username").text();
+	 	var mail=$("#mail").text();
+	 	var textarea=$("#textarea-copy").text();
+
+	 $("#username-to-paste").click(function(){
+	 	$("#username-paste").val(username).css({"color":"#006699","background":"#eee"}) ;
+	 })
+	 $("#mail-to-paste").click(function(){
+	 	$("#email-paste").val(mail).css({"color":"#006699","background":"#eee"}); 
+	 })
+	 $("#textarea-to-paste").click(function(){
+	 	$("#textarea-paste").val(textarea).css({"color":"#006699","background":"#eee"}) ;
+	 })
 	 $("#click-to-paste").click(function(){
-
-	 	var copy=$("#copy").text();
-
-	 	$("#paste").val(copy).css({"color":"#006699","background":"#eee"})
-	 		 
+	 	$("#username-paste").val(username).css({"color":"#006699","background":"#eee"}) ;
+	 	$("#email-paste").val(mail).css({"color":"#006699","background":"#eee"}) ;
+	 	$("#textarea-paste").val(textarea).css({"color":"#006699","background":"#eee"}) ;
 	 })
 })
 </script>
